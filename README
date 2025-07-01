@@ -1,0 +1,16 @@
+http://localhost:3000
+
+http://localhost:3000/emissor
+
+http://localhost:3000/receptor
+
+socket-app/
+├── server.js
+├── routes.js
+├── package.json
+├── views/
+│   ├── index.ejs
+│   ├── emissor.ejs
+│   └── receptor.ejs
+├── public/
+│   └── style.css
