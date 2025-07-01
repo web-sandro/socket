@@ -1,4 +1,7 @@
-  const socket = new WebSocket('ws://' + location.host);
+  const protocol = location.protocol === 'https:' ? 'wss://' : 'ws://';
+  const socket = new WebSocket(protocol + location.host);
+
+
 
     function enviar() {
       const msg = document.getElementById('mensagem').value;
