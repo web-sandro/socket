@@ -22,9 +22,17 @@ wss.on('connection', ws => {
   ws.on('message', msg => {
     console.log('📨 Mensagem recebida:', msg.toString());
     connections.forEach(conn => {
-      if (conn !== ws && conn.readyState === ws.OPEN) {
-        conn.send(msg);
-      }
+      // Envia a mensagem para todos os clientes conectados, exceto o que enviou
+
+          // if (conn !== ws && conn.readyState === ws.OPEN) {
+          //   conn.send(msg);
+          // }
+
+      // Envia a mensagem para todos os clientes conectados, e de volta para o cliente que enviou
+      
+        if (conn.readyState === ws.OPEN) {
+          conn.send(msg);
+        }
     });
   });
 
